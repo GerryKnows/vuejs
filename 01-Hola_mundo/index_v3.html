@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue v3</title>
 </head>
 <body>
+  <div id="container">
+    Contador : {{count}}
+  </div>
 
-<!--cdn de vue -->
-<script src="https://unpkg.com/vue@3"></script> 
+   <!-- CDN V3  -->
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    const Count = {
+      data(){
+        return {
+          count:0
+        }
 
-<!-- etiqueta del componente con un id -->
-<div id="app">{{ message }}</div> 
-
-<!-- definir la logica del componente "app" mediante un script -->
-<script>
-  const { createApp } = Vue
-
-  createApp({
-    data() {
-      return {
-        message: 'Hello Faggot!'
+      },
+      mounted(){
+        setInterval(()=>{
+          this.count++
+        },500 )
       }
     }
-  }).mount('#app')
-</script>
-    
+    Vue.createApp(Count).mount('#container')
+   
+  </script>
+  
 </body>
 </html>

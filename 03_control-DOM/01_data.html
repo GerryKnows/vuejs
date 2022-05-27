@@ -4,33 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue v2</title>
+    <title>Data</title>
 </head>
 <body>
-
     <div id="app">
-        {{mensaje}}
-        <!-- eventos -->
-        <button v-on:click="reverseText" > Reverso del texto </button>
-
+        <h1>{{nombre}}</h1>
+        <h1>{{cursos}}</h1>
+        <h1>{{estado}}</h1>
 
     </div>
+
     <!-- CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
-        var app = new Vue({
+        const app = new Vue({
             el:'#app',
             data: {
-                mensaje:'¡Hola Zombie!'
-            },
-            methods: {
-                reverseText: function(){
-                    this.mensaje = this.mensaje.split('').reverse().join('')
+                nombre:"Zombie",
+                cursos: 5,
+                estado:false,
 
-                }
+
             }
-        })
-    </script>   
 
+        })
+    </script>
+    
 </body>
 </html>

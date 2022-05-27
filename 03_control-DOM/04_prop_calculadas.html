@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{nombreCompleto}}</h2>
+        <input type="text" placeholder="nombre" v-model="nombre">
+        <input type="text" placeholder="apellido" v-model="apellido">
+    </div>
+    <!--Computed propierties-->
+    <!--
+        Aportan gran valor en el desarrollo con Vue y son
+        múy similares a los métodos en Vue.js
+    -->
+    <!-- CDN V2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue ({
+            el:'#app',
+            data: {
+                nombre:'Daniel',
+                apellido: 'Martinez'
+            },
+            // Computed propierties
+            computed: {
+                nombreCompleto: function (){
+                    return this.nombre + " " + this.apellido
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
